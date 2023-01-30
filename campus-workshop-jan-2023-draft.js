@@ -81,7 +81,7 @@ async function createSellOffer() {
     offerAmountField.value = 50000000;
   }                
 
-  //TODO: Transaction blob for minting a token
+  //TODO: Transaction blob for creating a sell offer
 
   //TODO: Send transaction and get the transaction results
 
