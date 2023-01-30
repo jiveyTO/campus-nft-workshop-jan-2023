@@ -96,8 +96,6 @@ async function createSellOffer() {
     offerAmountField.value = 50000000;
   }                
 
-  console.log('tokenID ' + tokenID);
-  console.log('offer value = ' + offerAmountField.value);
   let transactionBlob = {
     "TransactionType": "NFTokenCreateOffer",
     "Account": my_wallet.classicAddress,
