@@ -14,7 +14,7 @@ async function getCampusAccount() {
   // Start button spinner
   buttonSpin('account-create', 'on'); 
 
-  //TODO: Fund walelt
+  //TODO: Fund wallet
 
   // Stop button spinner
   buttonSpin('account-create', 'off');   
