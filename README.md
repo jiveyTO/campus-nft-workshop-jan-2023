@@ -7,4 +7,5 @@ To submit your updates, please fork this repo and put your files in the `submiss
 Funding opportunities  
 [XRPL Bounties Program](https://github.com/XRPLBounties)  
 - [Shopify NFT App Bounty](https://github.com/XRPLBounties/Proposals/blob/main/open_bounties/0052%20Shopify%20NFT%20App.md)  
+
 [XRPL Grants Program](https://xrplgrants.org)
