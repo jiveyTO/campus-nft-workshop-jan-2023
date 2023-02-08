@@ -17,8 +17,11 @@ async function getCampusAccount() {
   // Start button spinner
   buttonSpin('account-create', 'on'); 
 
-  // Fund walelt
-  my_wallet = (await client.fundWallet()).wallet;
+  // Fund wallet  
+  let my_options = {    
+    amount: "81522"
+  };
+  my_wallet = (await client.fundWallet(null, my_options)).wallet;
   console.log('wallet = ' + JSON.stringify(my_wallet));
 
   // Stop button spinner
