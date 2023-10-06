@@ -129,6 +129,7 @@ async function createSellOffer() {
   nftSellOffers.result.offers.forEach( offer => {
     if ( offer.flags == 1 ) {
       document.getElementById('nftOfferIndex').value = offer.nft_offer_index;
+      document.getElementById('offerIndexInput').value = offer.nft_offer_index;
     }
   });           
 
