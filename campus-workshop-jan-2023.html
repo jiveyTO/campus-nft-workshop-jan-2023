@@ -11,6 +11,11 @@
         window.location.href = "https://xrpl.org/nftokencreateoffer.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy"; //will redirect to your blog page (an ex: blog.html)
         }, 900000); //will call the function after 900 secs.        
     </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>    
   </head>
   <body>
 
@@ -333,8 +338,70 @@
                   <label for="acceptIndex" class="form-label">NFT Offer Index</label>
                   <input type="text" class="form-control" id="acceptIndex">
                 </div>       
-              </div>                
+              </div>
+            
+              <div class="row mt-3">
+                <div class="col-11">
+                  <label for="nameInput" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="nameInput" autocomplete="off">
+                </div>
+              </div>
+            
+              <div class="row mt-3">
+                <div class="col-11">
+                  <label for="offerIndexInput" class="form-label">Offer Index</label>
+                  <input type="test" class="form-control" id="offerIndexInput" autocomplete="off">
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary" id="chat-submit-button">            
+                <span id="chat-submit-button-text" style="display: inline;">Submit</span>
+              </button>              
+              
+              <div id="entries" class="mt-5"></div>                
             </div>
+
+            <script>
+              // Your Firebase Config here
+              const firebaseConfig = {
+                apiKey: "AIzaSyCu-4tlICn06Y_kQNKyKLFa03oYhQ-_oP0",
+                authDomain: "xrpl-chat-8d384.firebaseapp.com",
+                databaseURL: "https://xrpl-chat-8d384-default-rtdb.firebaseio.com",
+                projectId: "xrpl-chat-8d384",
+                storageBucket: "xrpl-chat-8d384.appspot.com",
+                messagingSenderId: "549943348452",
+                appId: "1:549943348452:web:b79b293b1aaf072e49f0f1",
+                measurementId: "G-N0L4MC0XRF"
+              };
+          
+              // Initialize Firebase
+              firebase.initializeApp(firebaseConfig);
+          
+              var database = firebase.database();
+          
+              document.getElementById('chat-submit-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                var name = document.getElementById('nameInput').value;
+                var offerIndex = document.getElementById('offerIndexInput').value;
+          
+                database.ref('entries/').push().set({
+                  "name": name,
+                  "offerIndex": offerIndex
+                });
+          
+                document.getElementById('nameInput').value = '';
+                document.getElementById('offerIndexInput').value = '';
+              });
+          
+              database.ref('entries/').on('child_added', function(snapshot) {
+                var data = snapshot.val();
+                var entryList = document.getElementById('entries');
+                var newEntry = document.createElement('div');
+                newEntry.className = 'alert alert-primary';
+                newEntry.textContent = `Name: ${data.name}, Offer Index: ${data.offerIndex}`;
+                entryList.appendChild(newEntry);
+              }); 
+            </script>            
 
             <div class="col-lg-4 col-md-5 col-11">
               <div class="card">
