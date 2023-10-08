@@ -46,7 +46,8 @@ async function mintNFT() {
   let nftURIField = document.getElementById('nftTokenURL');
   if ( nftURIField.value.length == 0 ) {
     // Use my image stored on Pinata as the default
-    nftURIField.value = 'ipfs://QmXSidVfGe24KazE9nWQHm3Y51g82jXnKajcEYdFLCpaCS';
+    // nftURIField.value = 'ipfs://QmXSidVfGe24KazE9nWQHm3Y51g82jXnKajcEYdFLCpaCS';
+    nftURIField.value = 'ipfs://QmT1xz1kRVoMLRemwQpuTmHdzG1CJX8mhE8QUty2aM4kKd';
   }        
 
   let transferFeeField = document.getElementById('transferFee');    
