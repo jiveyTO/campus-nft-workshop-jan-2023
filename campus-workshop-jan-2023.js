@@ -19,7 +19,7 @@ async function getCampusAccount() {
 
   // Fund wallet  
   let my_options = {    
-    amount: "81522"
+    amount: "100"
   };
   my_wallet = (await client.fundWallet(null, my_options)).wallet;
   console.log('wallet = ' + JSON.stringify(my_wallet));
